@@ -15,6 +15,7 @@ var CKBUILDER_CONFIG = {
 		'bender-out.log',
 		'.travis.yml',
 		'dev',
+        'dist',
 		'docs',
 		'.DS_Store',
 		'.editorconfig',

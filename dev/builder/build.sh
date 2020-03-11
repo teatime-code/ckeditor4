@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 # Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
 # For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 
@@ -16,6 +16,7 @@ PROGNAME=$(basename $0)
 MSG_UPDATE_FAILED="Warning: The attempt to update ckbuilder.jar failed. The existing file will be used."
 MSG_DOWNLOAD_FAILED="It was not possible to download ckbuilder.jar."
 ARGS=" $@ "
+RELEASE="../../dist"
 
 function error_exit
 {
@@ -70,21 +71,21 @@ then
 	VERSION="$VERSION DEV"
 fi
 
-java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ release $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
+java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ $RELEASE $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
 
 # Copy and build tests.
 if [[ "$ARGS" == *\ \-t\ * ]]; then
 	echo ""
 	echo "Copying tests..."
 
-	cp -r ../../tests release/ckeditor/tests
-	cp -r ../../package.json release/ckeditor/package.json
-	cp -r ../../bender.js release/ckeditor/bender.js
+	cp -r ../../tests $RELEASE/ckeditor/tests
+	cp -r ../../package.json $RELEASE/ckeditor/package.json
+	cp -r ../../bender.js $RELEASE/ckeditor/bender.js
 
 	echo ""
 	echo "Installing tests..."
 
-	(cd release/ckeditor &&	npm install && bender init)
+	(cd $RELEASE/ckeditor && npm install && bender init)
 fi
 
 echo ""
