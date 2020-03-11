@@ -1,5 +1,6 @@
-# TeaTime-Code Fork of CKEditor 4 - Smart WYSIWYG HTML editor (with extra modifications) 
+# Fork of TCKEditor 4 - Smart WYSIWYG HTML editor 
 
+## TeaTime-Code Fork (with extra modifications) 
 
 This modifcation uses the best out of CKEditor4, and add a customizing interface who wanted to extend the editor in a more modern way(especially, intergrated with React, and custom elements for dynamic contents).
 
@@ -18,8 +19,6 @@ Supports a broad range of browsers, including legacy ones.
 ```bash
 $ yarn add @teatime-code/ckeditor4-dev
 ```
-
-
 
 ---
 
