@@ -1,6 +1,6 @@
 {
   "name": "@teatime-code/ckeditor4-dev",
-  "version": "0.1.0-test.2",
+  "version": "0.1.0-test.3",
   "ckeditorVersion": "4.14.0",
   "description": "A customized fork of CKEditor4 - JavaScript WYSIWYG web text editor.",
   "devDependencies": {
@@ -25,7 +25,7 @@
     "shelljs": "^0.8.2"
   },
   "scripts": {
-    "prepublish": "dev/builder/build.sh --no-zip --no-tar",
+    "prepublishOnly": "dev/builder/build.sh --no-zip --no-tar",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -56,7 +56,7 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {
+  "peerDependencies": {
     "JSV": "^4.0.2",
     "abbrev": "^1.1.1",
     "accepts": "^1.2.13",
